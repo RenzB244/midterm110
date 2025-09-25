@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav container">
+      <div class="brand">Portfolio</div>
+      <div class="menu">
+        <a href="index.html" class="navlink active">Home</a>
+        <a href="team.html" class="navlink">Team</a>
+        <a href="credentials.html" class="navlink">Credentials</a>
+        <a href="contact.html" class="navlink">Contact</a>
+        <a href="converter.html" class="btn primary">Open Converter</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HOME -->
+    <section class="section hero">
+      <div class="copy">
+        <h1>Showcasing our Currency Converter</h1>
+        <p>A simple, fast, and accurate converter powered by real-time exchange rates. Below is a quick overview of the team and the project goals.</p>
+        <div>
+          <a href="converter.html" class="btn primary">Try the Converter</a>
+          <a href="#about" class="btn">Learn More</a>
+        </div>
+      </div>
+      
+    </section>
+
+    <section id="about" class="section grid" style="grid-template-columns: 1fr; align-items: start;">
+      <div class="card">
+        <h2>About the Project</h2>
+        <p>We created a Currency Converter using JavaScript and an exchange rate API. It supports many currencies and provides instant results with a clean and accessible UI.</p>
+        <a href="converter.html" class="btn">Go to Currency Converter</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Portfolio. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  </body>
+</html>

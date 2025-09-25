@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact • Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav container">
+      <div class="brand">Portfolio</div>
+      <div class="menu">
+        <a href="index.html" class="navlink">Home</a>
+        <a href="team.html" class="navlink">Team</a>
+        <a href="credentials.html" class="navlink">Credentials</a>
+        <a href="contact.html" class="navlink active">Contact</a>
+        <a href="converter.html" class="btn primary">Open Converter</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h1>Contact Us</h1>
+
+      <div class="grid" style="grid-template-columns: 1fr; gap: 16px;">
+        <!-- Member 1 -->
+        <div class="card" style="display:grid; grid-template-columns: 180px 1fr; gap:16px; align-items:center;">
+          <img class="avatar" style="width:140px;" src="assets/images/carl.jpg" alt="Member 1" onerror="this.src='assets/images/avatar-placeholder.svg'">
+          <div>
+            <h3 style="margin: 0 0 6px 0">Member 1</h3>
+            <p style="color: var(--muted); margin:0 0 12px 0">Role or short intro.</p>
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap:12px;">
+              <a href="#" class="btn" style="justify-content:flex-start">Facebook</a>
+              <a href="mailto:member1@example.com" class="btn" style="justify-content:flex-start">member1@example.com</a>
+              <span class="btn" style="justify-content:flex-start">+63 900 000 0001</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="card" style="display:grid; grid-template-columns: 180px 1fr; gap:16px; align-items:center;">
+          <img class="avatar" style="width:140px;" src="assets/images/regine.jpg" alt="Member 2" onerror="this.src='assets/images/avatar-placeholder.svg'">
+          <div>
+            <h3 style="margin: 0 0 6px 0">Member 2</h3>
+            <p style="color: var(--muted); margin:0 0 12px 0">Role or short intro.</p>
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap:12px;">
+              <a href="#" class="btn" style="justify-content:flex-start">Facebook</a>
+              <a href="mailto:member2@example.com" class="btn" style="justify-content:flex-start">member2@example.com</a>
+              <span class="btn" style="justify-content:flex-start">+63 900 000 0002</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="card" style="display:grid; grid-template-columns: 180px 1fr; gap:16px; align-items:center;">
+          <img class="avatar" style="width:140px;" src="assets/images/renz.jpg" alt="Member 3" onerror="this.src='assets/images/avatar-placeholder.svg'">
+          <div>
+            <h3 style="margin: 0 0 6px 0">Member 3</h3>
+            <p style="color: var(--muted); margin:0 0 12px 0">Role or short intro.</p>
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap:12px;">
+              <a href="#" class="btn" style="justify-content:flex-start">Facebook</a>
+              <a href="mailto:member3@example.com" class="btn" style="justify-content:flex-start">member3@example.com</a>
+              <span class="btn" style="justify-content:flex-start">+63 900 000 0003</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Portfolio. All rights reserved.
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
+
