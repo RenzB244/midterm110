@@ -15,7 +15,7 @@
         <a href="team.html" class="navlink">Team</a>
         <a href="credentials.html" class="navlink">Credentials</a>
         <a href="contact.html" class="navlink">Contact</a>
-        <a href="converter.html" class="btn primary">Open Converter</a>
+        <a href="quotes.html" class="btn primary">Get Random Quote</a>
       </div>
     </div>
   </header>
@@ -23,22 +23,45 @@
   <main class="container">
     <!-- HOME -->
     <section class="section hero">
-      <div class="copy">
-        <h1>Showcasing our Currency Converter</h1>
-        <p>A simple, fast, and accurate converter powered by real-time exchange rates. Below is a quick overview of the team and the project goals.</p>
-        <div>
-          <a href="converter.html" class="btn primary">Try the Converter</a>
-          <a href="#about" class="btn">Learn More</a>
+      <div class="copy reveal-up">
+        <h1>Welcome to<br>Our Portfolio</h1>
+        <p>We are a team of developers and creatives building websites, managing social media, and producing videos that inspire and connect.</p>
+        <p style="color: var(--muted); margin: 20px 0 0 0; font-style: italic; max-width: 700px;">"Building digital experiences, managing online presence, and bringing ideas to life through creativity and technology."</p>
+        <div style="display:flex; gap:12px; justify-content:flex-start; margin-top: 16px;">
+          <a href="quotes.html" class="btn primary">Get Random Quote</a>
+          <a href="team.html" class="btn">Meet the Team</a>
         </div>
       </div>
-      
+      <div class="media hero-media reveal-up reveal-delay-1">
+        <img src="assets/images/team.png" alt="Our Team">
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="grid features" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="card reveal-up reveal-delay-1">
+          <div class="icon-badge">💻</div>
+          <h3 style="margin: 8px 0 6px 0">Web Development</h3>
+          <p style="color: var(--muted); margin: 0">Creating responsive and modern websites</p>
+        </div>
+        <div class="card reveal-up reveal-delay-2">
+          <div class="icon-badge">💬</div>
+          <h3 style="margin: 8px 0 6px 0">Social Media Management</h3>
+          <p style="color: var(--muted); margin: 0">Growing online presence with engaging strategies</p>
+        </div>
+        <div class="card reveal-up reveal-delay-3">
+          <div class="icon-badge">📈</div>
+          <h3 style="margin: 8px 0 6px 0">Data Analyst</h3>
+          <p style="color: var(--muted); margin: 0">Transforming raw data into insights for smarter decisions</p>
+        </div>
+      </div>
     </section>
 
     <section id="about" class="section grid" style="grid-template-columns: 1fr; align-items: start;">
-      <div class="card">
+      <div class="card reveal-up">
         <h2>About the Project</h2>
-        <p>We created a Currency Converter using JavaScript and an exchange rate API. It supports many currencies and provides instant results with a clean and accessible UI.</p>
-        <a href="converter.html" class="btn">Go to Currency Converter</a>
+        <p>We created a Random Quote Generator using JavaScript that displays inspiring quotes from famous authors, philosophers, and leaders. It provides daily motivation with a clean and accessible UI.</p>
+        <a href="quotes.html" class="btn">Go to Quote Generator</a>
       </div>
     </section>
   </main>
@@ -49,6 +72,22 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Intersection Observer for animations
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+    });
   </script>
   </body>
 </html>
+

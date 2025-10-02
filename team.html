@@ -15,7 +15,7 @@
         <a href="team.html" class="navlink active">Team</a>
         <a href="credentials.html" class="navlink">Credentials</a>
         <a href="contact.html" class="navlink">Contact</a>
-        <a href="converter.html" class="btn primary">Open Converter</a>
+        <a href="quotes.html" class="btn primary">Get Random Quote</a>
       </div>
     </div>
   </header>
@@ -24,20 +24,23 @@
     <section class="section">
       <h1>Team</h1>
       <div class="grid" style="grid-template-columns: repeat(3, 1fr);">
-        <div class="card" style="text-align:center;">
-          <img class="avatar" src="assets/images/carl.jpg" alt="Member 1" onerror="this.src='assets/images/avatar-placeholder.svg'">
-          <h3>Member 1</h3>
-          <p style="color: var(--muted)">Short description about Member 1, role, and interests.</p>
+        <div class="card team-card reveal-up reveal-delay-1" style="text-align:center;">
+          <img class="avatar" src="assets/images/carl.jpg" alt="Carl" onerror="this.src='assets/images/avatar-placeholder.svg'">
+          <h3>Carl Villanueva</h3>
+          <div style="font-weight:700; margin: 4px 0 8px 0">Data Analyst</div>
+          <p style="color: var(--muted)">A detail-oriented Data Analyst who transforms raw data into meaningful insights, helping guide smarter decisions and strategies.</p>
         </div>
-        <div class="card" style="text-align:center;">
-          <img class="avatar" src="assets/images/regine.jpg" alt="Member 2" onerror="this.src='assets/images/avatar-placeholder.svg'">
-          <h3>Member 2</h3>
-          <p style="color: var(--muted)">Short description about Member 2, role, and interests.</p>
+        <div class="card team-card reveal-up reveal-delay-2" style="text-align:center;">
+          <img class="avatar" src="assets/images/regine.jpg" alt="Regine Paclibar" onerror="this.src='assets/images/avatar-placeholder.svg'">
+          <h3>Regine Paclibar</h3>
+          <div style="font-weight:700; margin: 4px 0 8px 0">UI Designer</div>
+          <p style="color: var(--muted)">A UI Designer who loves creating simple, clear, and easy-to-use designs for websites and apps.</p>
         </div>
-        <div class="card" style="text-align:center;">
-          <img class="avatar" src="assets/images/renz.jpg" alt="Member 3" onerror="this.src='assets/images/avatar-placeholder.svg'">
-          <h3>Member 3</h3>
-          <p style="color: var(--muted)">Short description about Member 3, role, and interests.</p>
+        <div class="card team-card reveal-up reveal-delay-3" style="text-align:center;">
+          <img class="avatar" src="assets/images/renz.jpg" alt="Renz Bete" onerror="this.src='assets/images/avatar-placeholder.svg'">
+          <h3>Renz Bete</h3>
+          <div style="font-weight:700; margin: 4px 0 8px 0">Back-End Developer</div>
+          <p style="color: var(--muted)">Dedicated to designing and maintaining secure, efficient, and scalable server-side systems to support modern web and application functionality.</p>
         </div>
       </div>
     </section>
@@ -48,6 +51,21 @@
   </footer>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Intersection Observer for animations
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+    });
   </script>
 </body>
 </html>

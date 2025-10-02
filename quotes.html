@@ -1,0 +1,38 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav container">
+        <div class="brand">Quote Generator</div>
+        <a href="index.html" class="btn">⬅ Back to Portfolio</a>
+      </div>
+    </header>
+
+    <main class="container converter">
+      <div class="card">
+        <h1 style="margin-top:0">Random Quote Generator</h1>
+        <p style="color: var(--muted); margin-top: 6px">Get inspired with random quotes from famous authors, philosophers, and leaders.</p>
+
+        <div id="quote-container" style="min-height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;">
+          <blockquote id="quote-text" style="font-size: 24px; font-style: italic; margin: 0 0 20px 0; line-height: 1.4;">
+            "Click the button below to get your first quote!"
+          </blockquote>
+          <cite id="quote-author" style="color: var(--muted); font-size: 16px;"></cite>
+        </div>
+
+        <div style="display:flex; gap:12px; margin-top: 20px; justify-content: center;">
+          <button class="btn primary" onclick="getRandomQuote()">Get New Quote</button>
+          <button class="btn" onclick="shareQuote()">Share Quote</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="quotes.js"></script>
+    </body>
+  </html>
