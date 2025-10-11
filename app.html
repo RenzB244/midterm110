@@ -1,53 +1,74 @@
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Quote Generator</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="nav container">
-        <div class="brand">Quote Generator</div>
-        <a href="index.html" class="btn">⬅ Back to Portfolio</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav container">
+      <div class="brand">Currency Converter</div>
+      <a href="index.html" class="btn">⬅ Back to Portfolio</a>
+    </div>
+  </header>
+
+  <main class="container converter">
+    <div class="card">
+      <h1 style="margin-top:0">Currency Converter</h1>
+      <p style="color: var(--muted); margin-top: 6px">Convert currencies using real-time exchange rates from ExchangeRate-API.</p>
+
+      <div class="grid" style="grid-template-columns: 1fr; gap: 15px; margin: 20px 0;">
+        <div>
+          <label for="amount" style="font-weight: 600; display: block; margin-bottom: 5px;">Amount</label>
+          <input id="amount" type="number" placeholder="Enter amount" class="input" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border, #ddd); font-size: 16px;" step="0.01" min="0">
+        </div>
+
+        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 15px;">
+          <div>
+            <label for="fromCurrency" style="font-weight: 600; display: block; margin-bottom: 5px;">From</label>
+            <select id="fromCurrency" class="input" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border, #ddd); font-size: 16px;">
+              <!-- Options populated by JavaScript -->
+            </select>
+          </div>
+          
+          <div>
+            <label for="toCurrency" style="font-weight: 600; display: block; margin-bottom: 5px;">To</label>
+            <select id="toCurrency" class="input" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border, #ddd); font-size: 16px;">
+              <!-- Options populated by JavaScript -->
+            </select>
+          </div>
+        </div>
+
+        <div id="validation" style="color: var(--danger, #dc3545); display: none; text-align: center; margin: 10px 0;">
+          Please enter a valid amount.
+        </div>
       </div>
-    </header>
 
-    <main class="container converter">
-      <div class="card">
-        <h1 style="margin-top:0">Random Quote Generator</h1>
-        <p style="color: var(--muted); margin-top: 6px">Get inspired with random quotes from famous authors, philosophers, and leaders.</p>
-
-        <div class="grid" style="grid-template-columns: 1fr; gap: 10px; margin: 12px 0 8px 0;">
-          <label for="filter" style="font-weight: 600;">Optional filter (author or keyword)</label>
-          <input id="filter" type="text" placeholder="e.g., Mandela, love, dream" class="input" style="padding:10px; border-radius:8px; border:1px solid var(--border);">
-          <div id="validation" style="color: var(--danger); display: none;">Please enter at least 2 characters.</div>
-        </div>
-
-        <div id="quote-container" style="min-height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;">
-          <blockquote id="quote-text" style="font-size: 24px; font-style: italic; margin: 0 0 20px 0; line-height: 1.4;">
-            "Click the button below to get your first quote!"
-          </blockquote>
-          <cite id="quote-author" style="color: var(--muted); font-size: 16px;"></cite>
-        </div>
-
-        <div style="display:flex; gap:12px; margin-top: 20px; justify-content: center;">
-          <button class="btn primary" onclick="getRandomQuote()">Get New Quote</button>
-          <button class="btn" onclick="shareQuote()">Share Quote</button>
-        </div>
+      <div id="result">
+        <!-- Results will be displayed here -->
       </div>
-    </main>
 
-    <script src="config.js"></script>
-    <script src="quotes.js"></script>
-    <script>
-      // basic input validation feedback
-      document.getElementById('filter').addEventListener('input', () => {
-        const v = document.getElementById('filter').value.trim();
-        document.getElementById('validation').style.display = v && v.length < 2 ? 'block' : 'none';
-      });
-    </script>
-    </body>
-  </html>
+      <div style="display:flex; gap:12px; margin-top: 20px; justify-content: center;">
+        <button class="btn primary" onclick="convertCurrency()">Convert Currency</button>
+        <button class="btn" onclick="swapCurrencies()">Swap Currencies</button>
+      </div>
+    </div>
+  </main>
 
+  <script src="converter.js"></script>
+  <script>
+    // Basic input validation feedback
+    document.getElementById('amount').addEventListener('input', () => {
+      const amount = document.getElementById('amount').value.trim();
+      const validation = document.getElementById('validation');
+      if (amount && (isNaN(amount) || parseFloat(amount) <= 0)) {
+        validation.style.display = 'block';
+      } else {
+        validation.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
