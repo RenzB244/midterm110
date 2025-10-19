@@ -1,6 +1,6 @@
 // Load currency options
 const fromCurrency = document.getElementById("fromCurrency");
-const toCurrency = document.getElementById("toCurrency");
+const toCurrency = document.getElementById("toCurrency")
 const result = document.getElementById("result");
 
 async function loadCurrencies() {
